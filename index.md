@@ -2,7 +2,7 @@
 layout: splash
 title: "Hi, I’m Alberto."
 header:
-  overlay_image: /assets/img/hero.jpg
+  overlay_image: /assets/img/hero.png
   overlay_filter: 0.3
   caption: "Spatial-omics × AI for tissue biology & drug discovery"
 excerpt: "Principal Scientist in Computational Biology @ Roche (Basel). I build spatial-omics and AI workflows to decode tissue biology and accelerate drug discovery."
