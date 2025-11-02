@@ -11,6 +11,10 @@ include:
 plugins:
   - jekyll-remote-theme
   - jekyll-include-cache
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+search: true
 
 # Build settings
 markdown: kramdown
@@ -18,46 +22,54 @@ kramdown:
   input: GFM
 
 # Minimal Mistakes settings
-minimal_mistakes_skin: "dark"
+minimal_mistakes_skin: alberto
 locale: "en"
 repository: "alberto-valdeolivas/alberto-valdeolivas.github.io"
 
 author:
-  name: "Alberto Valdeolivas"
-  avatar: "/assets/img/avatar.jpg"
-  bio: "Principal Scientist in Computational Biology at Roche (Basel). I use spatial omics and AI to advance drug discovery."
+  name: "Alberto Valdeolivas, PhD"
+  avatar: /assets/img/avatar.jpg
+  bio: "Principal Scientist in Computational Biology. I use spatial omics and AI to advance drug discovery."
   location: "Basel, Switzerland"
   links:
+    - label: "Email"         # use your preferred set below
+      icon: "fas fa-envelope"
+      url: "alvaldeolivas@gmail.com"
     - label: "Google Scholar"
-      icon: "fas fa-graduation-cap"
+      icon: "ai ai-google-scholar"
       url: "https://scholar.google.com/citations?user=9gqm7GYAAAAJ&hl=en"
     - label: "LinkedIn"
       icon: "fab fa-linkedin"
       url: "https://www.linkedin.com/in/alberto-valdeolivas/"
+    - label: "ORCID"
+      icon: "ai ai-orcid"
+      url: "https://orcid.org/0000-0001-5482-9023"
     - label: "GitHub"
       icon: "fab fa-github"
       url: "https://github.com/alberto-valdeolivas"
 
+
 # Navigation
 collections:
-  posts:
+  projects:
     output: true
-    permalink: /blog/:title/
+    permalink: /projects/:path/
+  pubs:
+    output: true
+    permalink: /publications/:path/
 
 paginate: 5
 paginate_path: /blog/page:num/
 
 # Defaults
 defaults:
-  - scope:
-      path: ""
-      type: pages
+  - scope: { path: "", type: projects }
     values:
       layout: single
-      author_profile: true
-  - scope:
-      path: ""
-      type: posts
+      author_profile: false
+      share: false
+      image: /assets/img/og-card.png
+  - scope: { path: "", type: pubs }
     values:
       layout: single
-      author_profile: true
+      author_profile: false
