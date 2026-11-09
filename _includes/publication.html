@@ -1,0 +1,6 @@
+{% assign p = include.paper %}
+<article class="publication" data-publication data-topic="{{ p.topic }}" id="{{ p.id }}">
+  <div class="publication-year">{{ p.year }}<span>{{ p.label }}</span></div>
+  <div class="publication-body"><p class="publication-venue">{{ p.venue }}</p><h2><a href="{{ p.doi }}">{{ p.title }}</a></h2><p class="publication-authors">{{ p.authors }}</p><p class="publication-summary">{{ p.summary }}</p><details class="paper-note"><summary>Research note <span aria-hidden="true">+</span></summary><p>{{ p.note }}</p></details></div>
+  <div class="publication-links"><a href="{{ p.doi }}">Paper <span aria-hidden="true">↗</span></a>{% if p.code %}<a href="{{ p.code }}">Code <span aria-hidden="true">↗</span></a>{% endif %}{% if p.data %}<a href="{{ p.data }}">Data <span aria-hidden="true">↗</span></a>{% endif %}</div>
+</article>

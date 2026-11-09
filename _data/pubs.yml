@@ -1,7 +1,89 @@
-- title: "Title of your paper"
-  authors: "A. Valdeolivas*, B. Coauthor"
-  venue: "Journal Name"
+- id: residual-disease
+  title: "Spatiotemporal organisation of residual disease in mouse and human BRCA1-deficient mammary tumours and breast cancer"
+  short_title: "Mapping the spatial biology of residual breast cancer"
+  authors: "D. Túrós et al., including A. Valdeolivas"
+  venue: "Nature Communications"
+  year: 2026
+  topic: spatial
+  label: "Spatial biology"
+  selected: true
+  summary: "Following tumour cells and their microenvironment through treatment, residual disease and recurrence."
+  note: "A collaborative study combining single-cell RNA sequencing, spatial transcriptomics and imaging mass cytometry to investigate how treatment-tolerant cells persist in breast cancer."
+  doi: "https://doi.org/10.1038/s41467-026-74125-6"
+
+- id: activevisium
+  title: "ActiveVisium: Leveraging Active Learning to Enhance Manual Pathologist Annotation in 10x Visium Spatial Transcriptomics Experiments"
+  authors: "J. Vasiljević, I. Berenguer Veiga, K. Hahn, P. Schwalie & A. Valdeolivas"
+  venue: "ECML PKDD · Applied Data Science Track"
   year: 2025
-  doi: "https://doi.org/..."
-  pdf: "https://..."
-  code: "https://github.com/..."
+  topic: ai
+  label: "Applied AI"
+  summary: "Bringing pathologists into the learning loop to make spatial annotation more efficient."
+  note: "Active learning uses tissue morphology and optional gene expression to select informative spots for expert annotation. The work evaluates this approach across breast cancer, colorectal cancer and kidney samples."
+  doi: "https://doi.org/10.1007/978-3-032-06118-8_27"
+
+- id: chrysalis
+  title: "Chrysalis: decoding tissue compartments in spatial transcriptomics with archetypal analysis"
+  short_title: "Chrysalis: discovering the compartments within tissues"
+  authors: "D. Túrós, J. Vasiljevic, K. Hahn, S. Rottenberg & A. Valdeolivas"
+  venue: "Communications Biology"
+  year: 2024
+  topic: spatial
+  label: "Spatial biology"
+  selected: true
+  summary: "Finding spatially distinct cellular niches without an external single-cell reference."
+  note: "Chrysalis combines spatially variable gene detection with archetypal analysis to identify tissue compartments and their gene expression signatures. Its Python implementation integrates with Scanpy-based workflows."
+  doi: "https://doi.org/10.1038/s42003-024-07165-7"
+  code: "https://github.com/rockdeme/chrysalis"
+
+- id: pinnacle
+  title: "Contextual AI models for single-cell protein biology"
+  authors: "M. M. Li et al., including A. Valdeolivas"
+  venue: "Nature Methods"
+  year: 2024
+  topic: ai
+  label: "Applied AI"
+  selected: true
+  summary: "Learning protein representations that account for the cell types in which proteins act."
+  note: "PINNACLE is a geometric deep learning approach to context-aware protein representations. It connects protein interaction networks with single-cell information to study protein function and therapeutic targets."
+  doi: "https://doi.org/10.1038/s41592-024-02341-3"
+  code: "https://github.com/mims-harvard/PINNACLE"
+
+- id: spatial-crc
+  title: "Profiling the heterogeneity of colorectal cancer consensus molecular subtypes using spatial transcriptomics"
+  short_title: "A spatial view of colorectal cancer heterogeneity"
+  authors: "A. Valdeolivas, B. Amberg, N. Giroud et al."
+  venue: "npj Precision Oncology"
+  year: 2024
+  topic: spatial
+  label: "Spatial biology"
+  selected: true
+  summary: "Resolving molecular subtypes in their tissue context, beyond a single bulk tumour label."
+  note: "Spatial transcriptomics and single-cell RNA sequencing reveal how molecular programmes relate to tumour, stromal and non-neoplastic regions. Analysis scripts, notebooks and processed data accompany the study."
+  doi: "https://doi.org/10.1038/s41698-023-00488-4"
+  code: "https://github.com/alberto-valdeolivas/ST_CRC_CMS"
+  data: "https://doi.org/10.5281/zenodo.7551712"
+
+- id: omnipath
+  title: "Integrated intra- and intercellular signaling knowledge for multicellular omics analysis"
+  authors: "D. Türei, A. Valdeolivas, L. Gul et al."
+  venue: "Molecular Systems Biology"
+  year: 2021
+  topic: networks
+  label: "Network biology"
+  summary: "Connecting communication between cells to the molecular signalling within them."
+  note: "The OmniPath resource integrates molecular interactions, protein annotations and communication roles. R and Python interfaces make this prior knowledge accessible for multicellular omics analysis."
+  doi: "https://doi.org/10.15252/msb.20209923"
+  code: "https://github.com/saezlab/OmnipathR"
+
+- id: random-walk
+  title: "Random walk with restart on multiplex and heterogeneous biological networks"
+  authors: "A. Valdeolivas, L. Tichit, C. Navarro et al."
+  venue: "Bioinformatics"
+  year: 2019
+  topic: networks
+  label: "Network biology"
+  summary: "Exploring connected layers of biological knowledge to prioritise disease-associated genes."
+  note: "An extension of random walk with restart to multiplex and heterogeneous networks, with an open-source R package for integrating different interaction types and gene–disease associations. The article appeared online in 2018 and in the 2019 journal issue."
+  doi: "https://doi.org/10.1093/bioinformatics/bty637"
+  code: "https://github.com/alberto-valdeolivas/RandomWalkRestartMH"

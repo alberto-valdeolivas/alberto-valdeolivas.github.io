@@ -1,9 +1,7 @@
 ---
 permalink: /contact/
 title: "Contact"
+description: "Get in touch with Alberto Valdeolivas for scientific exchange, research collaborations, talks and mentoring. Based in Basel, Switzerland."
 ---
 
-The quickest way to reach me is via LinkedIn. For scientific queries, please include a short context and any relevant links.
-
-- LinkedIn: <https://www.linkedin.com/in/alberto-valdeolivas/>
-- Google Scholar: <https://scholar.google.com/citations?user=9gqm7GYAAAAJ&hl=en>
+<section class="container contact-page"><div class="contact-intro"><p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Basel, Switzerland</p><h1>It starts with<br>a <em>conversation.</em></h1><p class="contact-lead">An interesting scientific question? A potential collaboration? I’d be happy to hear from you.</p><p>The quickest way to reach me is through LinkedIn. A little context about your work, your question and any relevant links is always helpful.</p><a class="button button-dark" href="{{ site.author.linkedin }}">Connect on LinkedIn <span aria-hidden="true">↗</span></a></div><aside class="contact-aside" aria-label="Contact and profile links"><p class="eyebrow">Find me here</p><a href="mailto:{{ site.author.email }}"><span>Email<small>{{ site.author.email }}</small></span><span aria-hidden="true">↗</span></a><a href="{{ site.author.linkedin }}"><span>LinkedIn<small>Professional profile & conversations</small></span><span aria-hidden="true">↗</span></a><a href="{{ site.author.scholar }}"><span>Google Scholar<small>Complete publication record</small></span><span aria-hidden="true">↗</span></a><a href="{{ site.author.github }}"><span>GitHub<small>Code & open-source contributions</small></span><span aria-hidden="true">↗</span></a><a href="{{ site.author.orcid }}"><span>ORCID<small>0000-0001-5482-9023</small></span><span aria-hidden="true">↗</span></a><p class="contact-note">Research collaborations · Scientific exchange<br>Talks · Mentoring</p></aside></section>

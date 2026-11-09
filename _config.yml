@@ -1,75 +1,42 @@
 title: "Alberto Valdeolivas"
-description: "Principal Scientist in Computational Biology — Spatial Omics & AI to advance drug discovery"
+description: "Principal & Applied AI Scientist at Roche. Connecting spatial omics, biological networks and AI to understand disease and advance drug discovery."
 url: "https://alberto-valdeolivas.github.io"
 baseurl: ""
-theme: null
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+lang: en
+repository: "alberto-valdeolivas/alberto-valdeolivas.github.io"
 
+# Self-contained custom design, built directly by GitHub Pages.
+theme: null
+plugins: []
 include:
   - _pages
-
-plugins:
-  - jekyll-remote-theme
-  - jekyll-include-cache
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
-search: true
-
-# Build settings
 markdown: kramdown
 kramdown:
   input: GFM
-
-# Minimal Mistakes settings
-minimal_mistakes_skin: alberto
-locale: "en"
-repository: "alberto-valdeolivas/alberto-valdeolivas.github.io"
-
+permalink: pretty
 author:
-  name: "Alberto Valdeolivas, PhD"
-  avatar: /assets/img/avatar.jpg
-  bio: "Principal Scientist in Computational Biology. I use spatial omics and AI to advance drug discovery."
+  name: "Alberto Valdeolivas"
+  role: "Principal & Applied AI Scientist"
+  affiliation: "Roche"
   location: "Basel, Switzerland"
-  links:
-    - label: "Email"         # use your preferred set below
-      icon: "fas fa-envelope"
-      url: "alvaldeolivas@gmail.com"
-    - label: "Google Scholar"
-      icon: "ai ai-google-scholar"
-      url: "https://scholar.google.com/citations?user=9gqm7GYAAAAJ&hl=en"
-    - label: "LinkedIn"
-      icon: "fab fa-linkedin"
-      url: "https://www.linkedin.com/in/alberto-valdeolivas/"
-    - label: "ORCID"
-      icon: "ai ai-orcid"
-      url: "https://orcid.org/0000-0001-5482-9023"
-    - label: "GitHub"
-      icon: "fab fa-github"
-      url: "https://github.com/alberto-valdeolivas"
-
-
-# Navigation
-collections:
-  projects:
-    output: true
-    permalink: /projects/:path/
-  pubs:
-    output: true
-    permalink: /publications/:path/
-
-paginate: 5
-paginate_path: /blog/page:num/
-
-# Defaults
+  email: "alvaldeolivas@gmail.com"
+  avatar: "/assets/img/portrait-linkedin.jpg"
+  scholar: "https://scholar.google.com/citations?user=9gqm7GYAAAAJ&hl=en"
+  linkedin: "https://www.linkedin.com/in/alberto-valdeolivas/"
+  github: "https://github.com/alberto-valdeolivas"
+  orcid: "https://orcid.org/0000-0001-5482-9023"
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - scripts
+  - docs
+  - vendor
+  - node_modules
+  - .jekyll-cache
 defaults:
-  - scope: { path: "", type: projects }
+  - scope:
+      path: ""
     values:
-      layout: single
-      author_profile: false
-      share: false
-      image: /assets/img/og-card.png
-  - scope: { path: "", type: pubs }
-    values:
-      layout: single
-      author_profile: false
+      layout: default
