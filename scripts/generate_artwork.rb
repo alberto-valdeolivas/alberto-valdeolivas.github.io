@@ -18,7 +18,7 @@ def line(x1, y1, x2, y2, color = CYAN, opacity = 0.3)
   %(<line x1="#{x1.round(2)}" y1="#{y1.round(2)}" x2="#{x2.round(2)}" y2="#{y2.round(2)}" stroke="#{color}" opacity="#{opacity}" stroke-width="0.8"/>)
 end
 
-def label(x, y, text, color = TEXT, size = 9)
+def label(x, y, text, color = TEXT, size = 13)
   %(<text x="#{x}" y="#{y}" fill="#{color}" font-family="Consolas,monospace" font-size="#{size}" letter-spacing="0.5">#{text}</text>)
 end
 
@@ -83,13 +83,13 @@ art << %(<path d="M102 110L78 80H40M450 194L490 142H535M201 456L232 491H356" fil
 art << label(40,69,'01 / NETWORKS')
 art << label(402,129,'03 / TISSUES')
 art << label(237,509,'02 / CELL COMMUNITIES')
-art << label(25,550,'MOLECULE → CELL → TISSUE', '#a9b8d0', 8)
-art << label(363,550,'CONCEPTUAL VIEW', '#a9b8d0', 8)
+art << label(25,550,'MOLECULE → CELL → TISSUE', '#a9b8d0', 11)
+art << label(363,550,'CONCEPTUAL VIEW', '#a9b8d0', 11)
 write_svg('connections.svg',560,570,art.join)
 
 # Companion project illustrations use the same visual vocabulary.
 write_svg('tissue.svg',520,300,
-  tissue(260,140,195,98,8,14) + label(375,29,'CELLULAR NICHES', CYAN,8) +
+  tissue(260,140,195,98,8,14) + label(375,29,'CELLULAR NICHES', CYAN,12) +
   %(<path d="M50 250h420M260 18v240" stroke="#{CYAN}" stroke-width="0.5" stroke-dasharray="2 6" opacity="0.4"/>))
 
 network = []
@@ -106,12 +106,12 @@ offsets.each_with_index do |(ox,oy),layer|
     network << line(ox+x,oy+y*0.55,ox+x+20,oy+y*0.55+66,color,0.22) if layer<2
   end
 end
-network << label(355,28,'MULTILAYER NETWORKS',CYAN,8)
+network << label(355,28,'MULTILAYER NETWORKS',CYAN,12)
 write_svg('network.svg',520,300,network.join)
 
 spatial = tissue(267,140,160,105,9,42)
 spatial << %(<path d="M52 40v199h409M55 190C150 143 190 205 270 157S381 72 451 109" stroke="#{CYAN}" fill="none" stroke-width="1" opacity="0.4"/> )
-spatial << label(341,28,'SPATIAL CONTEXT',CYAN,8)
+spatial << label(341,28,'SPATIAL CONTEXT',CYAN,12)
 write_svg('spatial.svg',520,300,spatial)
 
 signaling = []
@@ -126,6 +126,6 @@ signaling = []
 end
 signaling << %(<path d="M195 123C235 75 288 75 325 123M195 143h130M195 163C235 211 288 211 325 163" stroke="#{CYAN}" fill="none" stroke-width="0.8" stroke-dasharray="3 5"/>)
 [[240,93],[275,93],[260,143],[240,192],[275,192]].each { |x,y| signaling << circle(x,y,5,BLUE) }
-signaling << label(325,28,'CONNECTED SIGNALLING',CYAN,8)
+signaling << label(325,28,'CONNECTED SIGNALLING',CYAN,12)
 write_svg('signaling.svg',520,300,signaling.join)
 puts 'Generated five original SVG illustrations.'

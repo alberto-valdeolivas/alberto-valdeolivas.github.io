@@ -25,7 +25,7 @@
         menu.focus();
       }
     });
-    const mobile = window.matchMedia('(max-width: 600px)');
+    const mobile = window.matchMedia('(max-width: 900px)');
     const syncMenu = () => {
       menu.hidden = !mobile.matches;
       if (!mobile.matches) closeMenu();
