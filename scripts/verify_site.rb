@@ -8,7 +8,18 @@ require 'rexml/document'
 root = File.expand_path('..', __dir__)
 output = File.join(root, '_site')
 errors = []
-pages = Dir.glob('**/*.html', base: output).map { |path| File.join(output, path) }
+html_files = Dir.glob('**/*.html', base: output).map { |path| File.join(output, path) }
+verification_files = html_files.select do |file|
+  File.dirname(file) == output && File.basename(file).match?(/\Agoogle[0-9a-f]+\.html\z/)
+end
+verification_files.each do |file|
+  filename = File.basename(file)
+  actual = File.binread(file)
+  expected = "google-site-verification: #{filename}"
+  errors << "Invalid Google verification file: #{filename}" unless actual.sub(/(?:\r?\n)*\z/, '') == expected
+  errors << "Google verification file was modified during the build: #{filename}" unless actual == File.binread(File.join(root, filename))
+end
+pages = html_files - verification_files
 abort 'No built HTML found. Run bundle exec jekyll build first.' if pages.empty?
 
 def local_file(output, path)
@@ -82,4 +93,4 @@ errors << 'Development files leaked into build' unless Dir.glob('{scripts,docs,n
 if errors.any?
   abort errors.join("\n")
 end
-puts "PASS: #{pages.size} pages, #{pubs.size} publications, #{projects.size} projects; internal links, fragments, images, fonts, structured data, SVGs and sitemap verified."
+puts "PASS: #{pages.size} pages, #{pubs.size} publications, #{projects.size} projects, #{verification_files.size} Google verification files; internal links, fragments, images, fonts, structured data, SVGs and sitemap verified."

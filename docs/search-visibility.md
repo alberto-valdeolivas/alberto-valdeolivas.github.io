@@ -9,20 +9,26 @@ Site: https://alberto-valdeolivas.github.io/
 - A research overview at `/projects/random-walk-restart/`, linked from the homepage's project card and the projects page.
 - A sitemap generated from published pages using the default layout, with the 404 page excluded.
 - Direct website, publication and project links at the top of this repository's README.
-- Optional Google Search Console verification through `_config.yml`.
+- Google's supplied HTML verification file at `/google677150bd4a8d77c0.html`, copied without layout or metadata changes.
+- Optional support for Google's alternative HTML-tag method through `_config.yml`.
 
 These improvements support discovery and clearer identity information. They do not confirm that Google has indexed a page or guarantee search rankings.
 
-## Google Search Console: account verification pending
+## Google Search Console: verification file prepared; account confirmation pending
 
-1. Open https://search.google.com/search-console/ using the Google account that should own the property.
-2. Add a **URL-prefix** property for `https://alberto-valdeolivas.github.io/`.
-3. Choose **HTML tag** verification and copy its `content` value into `google_site_verification` in `_config.yml`. The tag is rendered only when this value is supplied. Alternatively, send the full tag to the assistant for deployment.
-4. Build and publish the site, then click **Verify** in Search Console.
-5. Submit `sitemap.xml` in the Sitemaps section.
-6. Inspect the homepage and `/projects/random-walk-restart/` with URL Inspection. Check the reported indexing status and request indexing where appropriate.
+Alberto supplied this verification-file content on 14 November 2026:
 
-The empty verification setting does not create a Search Console property or submit a sitemap. Those steps remain pending until the account is verified.
+```text
+google-site-verification: google677150bd4a8d77c0.html
+```
+
+1. Check that https://alberto-valdeolivas.github.io/google677150bd4a8d77c0.html displays exactly the line above.
+2. Open https://search.google.com/search-console/ with the Google account that supplied the file and select the **URL-prefix** property `https://alberto-valdeolivas.github.io/`.
+3. In **HTML file** verification, click **Verify**.
+4. Submit `sitemap.xml` in the Sitemaps section.
+5. Inspect the homepage and `/projects/random-walk-restart/` with URL Inspection. Check the reported indexing status and request indexing where appropriate.
+
+Publishing the file does not by itself confirm ownership in the account or submit a sitemap. Keep the file published after verification so Google can recheck ownership. The alternative `google_site_verification` meta-tag setting remains empty because this property is using the file method.
 
 References: [Google ownership verification](https://support.google.com/webmasters/answer/9008080), [sitemap submission](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap), [requesting a crawl](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl).
 

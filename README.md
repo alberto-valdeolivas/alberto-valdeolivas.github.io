@@ -78,7 +78,7 @@ The portrait is Alberto's LinkedIn photo, supplied by Alberto and saved locally 
 
 ## Publish
 
-Search Console verification and the remaining account steps are documented in [docs/search-visibility.md](docs/search-visibility.md). The public Google verification token can be added to `google_site_verification` in `_config.yml`; no verification tag is emitted while it is empty.
+Search Console's HTML verification file is stored at the repository root as `google677150bd4a8d77c0.html`. Keep it unchanged and published after verification. The remaining account steps are documented in [docs/search-visibility.md](docs/search-visibility.md). An optional alternative HTML-tag setting, `google_site_verification` in `_config.yml`, remains empty.
 
 The site retains the existing `https://alberto-valdeolivas.github.io` URL and routes. After reviewing the changes, commit and push to the branch configured in GitHub **Settings → Pages** (previously `main`, root). GitHub builds the Jekyll source and publishes it; `_site/` stays ignored. This redesign does not change repository settings or create another hosting service.
 
