@@ -9,6 +9,8 @@
   {% if page.home %}{% assign page_title = site.title | append: ' · Applied AI & Computational Biology' %}{% endif %}
   <title>{{ page_title | escape }}</title>
   <meta name="description" content="{{ page.description | default: site.description | escape }}">
+  <meta name="author" content="{{ site.author.name | escape }}">
+  {% if site.google_site_verification and site.google_site_verification != '' %}<meta name="google-site-verification" content="{{ site.google_site_verification | escape }}">{% endif %}
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="{{ site.title | escape }}">
@@ -24,13 +26,37 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": {{ site.author.name | jsonify }},
-    "url": {{ '/' | absolute_url | jsonify }},
-    "image": {{ site.author.avatar | absolute_url | jsonify }},
-    "jobTitle": {{ site.author.role | jsonify }},
-    "worksFor": {"@type": "Organization", "name": "Roche"},
-    "sameAs": [{{ site.author.scholar | jsonify }}, {{ site.author.linkedin | jsonify }}, {{ site.author.github | jsonify }}, {{ site.author.orcid | jsonify }}]
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": {{ '/#person' | absolute_url | jsonify }},
+        "name": {{ site.author.name | jsonify }},
+        "url": {{ '/' | absolute_url | jsonify }},
+        "image": {{ site.author.avatar | absolute_url | jsonify }},
+        "description": {{ site.description | jsonify }},
+        "jobTitle": {{ site.author.role | jsonify }},
+        "worksFor": {"@type": "Organization", "name": "Roche"},
+        "knowsAbout": {{ site.author.research_areas | jsonify }},
+        "sameAs": [{{ site.author.scholar | jsonify }}, {{ site.author.linkedin | jsonify }}, {{ site.author.github | jsonify }}, {{ site.author.orcid | jsonify }}]
+      },
+      {
+        "@type": "WebSite",
+        "@id": {{ '/#website' | absolute_url | jsonify }},
+        "name": {{ site.title | jsonify }},
+        "url": {{ '/' | absolute_url | jsonify }},
+        "publisher": {"@id": {{ '/#person' | absolute_url | jsonify }}}
+      },
+      {
+        "@type": {% if page.home %}"ProfilePage"{% else %}"WebPage"{% endif %},
+        "@id": {{ page.url | absolute_url | append: '#webpage' | jsonify }},
+        "name": {{ page_title | jsonify }},
+        "url": {{ page.url | absolute_url | jsonify }},
+        "description": {{ page.description | default: site.description | jsonify }},
+        "isPartOf": {"@id": {{ '/#website' | absolute_url | jsonify }}},
+        {% if page.home %}"mainEntity": {"@id": {{ '/#person' | absolute_url | jsonify }}},{% endif %}
+        "author": {"@id": {{ '/#person' | absolute_url | jsonify }}}
+      }
+    ]
   }
   </script>
 </head>

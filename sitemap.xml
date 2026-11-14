@@ -3,8 +3,7 @@ layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>{{ '/' | absolute_url }}</loc></url>
-  <url><loc>{{ '/publications/' | absolute_url }}</loc></url>
-  <url><loc>{{ '/projects/' | absolute_url }}</loc></url>
-  <url><loc>{{ '/contact/' | absolute_url }}</loc></url>
+{% assign sitemap_pages = site.pages | sort: 'url' %}{% for entry in sitemap_pages %}{% assign final_character = entry.url | slice: -1, 1 %}{% assign final_extension = entry.url | slice: -5, 5 %}{% if entry.layout == 'default' and entry.sitemap != false %}{% if final_character == '/' or final_extension == '.html' %}
+  <url><loc>{{ entry.url | absolute_url | xml_escape }}</loc></url>
+{% endif %}{% endif %}{% endfor %}
 </urlset>

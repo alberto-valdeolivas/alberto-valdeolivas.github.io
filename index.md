@@ -7,7 +7,7 @@ home: true
   <div class="hero-copy">
     <p class="eyebrow role"><span class="status-dot" aria-hidden="true"></span> Principal & Applied AI Scientist · Roche</p>
     <h1 id="hero-title">Biology is complex.<br>Let’s connect<br>the <em>dots.</em><span class="heading-dot" aria-hidden="true"></span></h1>
-    <p class="hero-intro">I’m Alberto. I bring together spatial omics, biological networks and AI to understand disease — and turn complex data into insights for drug discovery.</p>
+    <p class="hero-intro">I’m Alberto Valdeolivas, a Principal & Applied AI Scientist at Roche in Basel. I connect spatial omics, biological networks and machine learning to understand disease and support drug discovery.</p>
     <div class="hero-actions"><a class="button button-dark" href="#research">Explore my research <span aria-hidden="true">↓</span></a><a class="text-link" href="{{ site.author.scholar }}">Google Scholar <span aria-hidden="true">↗</span></a></div>
     <div class="hero-location"><span class="location-mark" aria-hidden="true">⊕</span> Based in Basel, Switzerland <span class="location-rule"></span> Working across scales</div>
   </div>

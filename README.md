@@ -1,5 +1,7 @@
 # Alberto Valdeolivas · Personal website
 
+[Visit the website](https://alberto-valdeolivas.github.io/) · [Publications](https://alberto-valdeolivas.github.io/publications/) · [Research software](https://alberto-valdeolivas.github.io/projects/)
+
 A custom Jekyll portfolio for research in applied AI, spatial omics and network biology. The website is designed for the existing GitHub Pages repository, with no remote theme, frontend framework or client-side build step.
 
 ## Pages
@@ -75,6 +77,8 @@ On Windows, rebuild the social image with:
 The portrait is Alberto's LinkedIn photo, supplied by Alberto and saved locally as `assets/img/portrait-linkedin.jpg`. DM Sans and Instrument Serif are self-hosted under the licenses in `assets/fonts/`. Public research sources and structural design references are recorded in [docs/research-and-design.md](docs/research-and-design.md).
 
 ## Publish
+
+Search Console verification and the remaining account steps are documented in [docs/search-visibility.md](docs/search-visibility.md). The public Google verification token can be added to `google_site_verification` in `_config.yml`; no verification tag is emitted while it is empty.
 
 The site retains the existing `https://alberto-valdeolivas.github.io` URL and routes. After reviewing the changes, commit and push to the branch configured in GitHub **Settings → Pages** (previously `main`, root). GitHub builds the Jekyll source and publishes it; `_site/` stays ignored. This redesign does not change repository settings or create another hosting service.
 

@@ -62,7 +62,13 @@ Dir.glob('assets/img/*.svg', base: output).map { |path| File.join(output, path) 
   end
 end
 begin
-  REXML::Document.new(File.read(File.join(output, 'sitemap.xml')))
+  sitemap = REXML::Document.new(File.read(File.join(output, 'sitemap.xml')))
+  sitemap_urls = REXML::XPath.match(sitemap, '//s:url/s:loc', { 's' => 'http://www.sitemaps.org/schemas/sitemap/0.9' }).map(&:text)
+  public_page_urls = pages.reject { |file| File.basename(file) == '404.html' }.map do |file|
+    File.read(file, encoding: 'UTF-8')[/<link rel="canonical" href="([^"]+)"/, 1]
+  end.compact
+  errors << 'Sitemap omits a published HTML page' unless (public_page_urls - sitemap_urls).empty?
+  errors << 'Sitemap contains a non-page or duplicate URL' unless (sitemap_urls - public_page_urls).empty? && sitemap_urls.uniq.size == sitemap_urls.size
 rescue REXML::ParseException => e
   errors << "Invalid sitemap: #{e.message}"
 end

@@ -1,9 +1,12 @@
 title: "Alberto Valdeolivas"
-description: "Principal & Applied AI Scientist at Roche. Connecting spatial omics, biological networks and AI to understand disease and advance drug discovery."
+description: "Alberto Valdeolivas, Principal & Applied AI Scientist at Roche in Basel. Spatial omics, computational biology and machine learning for drug discovery."
 url: "https://alberto-valdeolivas.github.io"
 baseurl: ""
 lang: en
 repository: "alberto-valdeolivas/alberto-valdeolivas.github.io"
+
+# Paste only the content value from Google's HTML verification tag when available.
+google_site_verification: ""
 
 # Self-contained custom design, built directly by GitHub Pages.
 theme: null
@@ -25,6 +28,12 @@ author:
   linkedin: "https://www.linkedin.com/in/alberto-valdeolivas/"
   github: "https://github.com/alberto-valdeolivas"
   orcid: "https://orcid.org/0000-0001-5482-9023"
+  research_areas:
+    - Spatial omics
+    - Computational biology
+    - Applied AI
+    - Biological networks
+    - Drug discovery
 exclude:
   - Gemfile
   - Gemfile.lock

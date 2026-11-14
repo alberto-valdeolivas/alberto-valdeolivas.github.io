@@ -8,6 +8,7 @@
   docs: "https://chrysalis.readthedocs.io/"
   paper: "https://doi.org/10.1038/s42003-024-07165-7"
 - name: "RandomWalkRestartMH"
+  overview: "/projects/random-walk-restart/"
   kind: "Multilayer network exploration"
   language: "R"
   motif: "network"
